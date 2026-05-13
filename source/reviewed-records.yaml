@@ -1,0 +1,485 @@
+import_package:
+  id: migente-directory-static-site-mvp-reviewed-records-2026-05-13
+  status: reviewed-initial-sample
+  launch_project: https://github.com/users/vitalychernobyl/projects/9
+  related_issue: https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/11
+  source_policy: tenant/docs/directory/source-and-display-policy.md
+  field_model: tenant/data/directory/field-model.yaml
+  source_review_checklist: tenant/data/directory/source-review-checklist.md
+  prepared_from_template: tenant/data/directory/real-record-import-template.yaml
+  notes:
+    - Initial sample import uses official public sources only.
+    - Prototype demo records were not copied into this file.
+    - Direct contact fields are intentionally hidden from public display.
+    - Schedules, pricing, and registration details should still link users to the official source before attending.
+
+review_metadata:
+  prepared_for: Static Site MVP source review
+  reviewer: codex
+  review_started_at: "2026-05-13"
+  review_completed_at: "2026-05-13"
+  import_decision: ready-for-static-site-mvp-sample
+  review_scope:
+    - official organization pages
+    - official class pages
+    - official instructor profile pages
+
+source_review_log:
+  - source: https://bailadc.com/about-us
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - studio
+      - instructor-list
+    note: Official Baila DC page describes the organization, class levels, instructor list, and public location.
+  - source: https://bailadc.com/classes
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - class
+    note: Official Baila DC page lists the June/July 2026 Salsa Level 1A schedule and registration link.
+  - source: https://salsawithsilvia.com/about/contact/
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - studio
+    note: Official Salsa With Silvia page lists DC and Bethesda locations.
+  - source: https://salsawithsilvia.com/about/instructor/silvia-alexiev/
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - instructor
+    note: Official Salsa With Silvia profile for Silvia Alexiev.
+  - source: https://salsawithsilvia.com/group/
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - class
+    note: Official Salsa With Silvia group class page describes DC/Bethesda group classes and Tier 0 entry path.
+  - source: https://ardientedance.com/
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - studio
+      - instructor
+      - class
+    note: Official Ardiente Dance page lists David Cuevas, DMV teaching area, Rockville classes, schedule, and pricing.
+  - source: https://www.ferocitydance.com/group-classes.html
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - studio
+      - class
+    note: Official Ferocity page lists Bachata Training Team schedules, levels, and instructors.
+  - source: https://www.ferocitydance.com/katarias.html
+    reviewed_at: "2026-05-13"
+    approved_for:
+      - instructor
+    note: Official Ferocity profile for Kat Arias.
+
+records:
+  studios:
+    - id: studio-baila-dc
+      slug: baila-dc
+      name: Baila DC
+      summary: Salsa organization in the DC metro area offering On2 salsa classes and Baila Thursdays socials.
+      city: Washington
+      state: DC
+      neighborhood: Union Market
+      dance_styles:
+        - salsa_on2
+      class_slugs:
+        - baila-dc-salsa-level-1a-june-july-2026
+      instructor_slugs:
+        - baila-dc-luz
+      external_source_url: https://bailadc.com/about-us
+      source_note: Official Baila DC about page describes the organization, On2 salsa classes, instructor list, and 1280 4th St NE Washington DC location.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhood: display
+        dance_styles: display
+        public_contact_url: source_link_only
+        public_phone: hide
+        address_line1: source_link_only
+      fields_hidden_from_public_display:
+        - public_phone
+        - direct_email
+
+    - id: studio-salsa-with-silvia-dc
+      slug: salsa-with-silvia-dc
+      name: Salsa With Silvia - DC
+      summary: Salsa With Silvia dance studio location in Washington DC offering group and private dance classes.
+      city: Washington
+      state: DC
+      neighborhood: Georgia Ave NW
+      dance_styles:
+        - salsa
+        - bachata
+        - reggaeton
+        - ballroom
+      class_slugs:
+        - salsa-with-silvia-tier-zero-dc-bethesda
+      instructor_slugs:
+        - silvia-alexiev
+      external_source_url: https://salsawithsilvia.com/about/contact/
+      source_note: Official contact page lists the DC location at 3232 Georgia Ave NW and Bethesda location details.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhood: display
+        dance_styles: display
+        public_contact_url: source_link_only
+        public_phone: hide
+        address_line1: source_link_only
+      fields_hidden_from_public_display:
+        - public_phone
+        - direct_email
+
+    - id: studio-ardiente-dance
+      slug: ardiente-dance
+      name: Ardiente Dance
+      summary: Ardiente Dance Company performs and teaches On2 Mambo/Salsa in Washington DC, Maryland, and Virginia.
+      city: Rockville
+      state: MD
+      neighborhood: Rockville
+      dance_styles:
+        - salsa_on2
+        - mambo
+      class_slugs:
+        - ardiente-salsa-social-dance-techniques-tuesday
+      instructor_slugs:
+        - david-cuevas
+      external_source_url: https://ardientedance.com/
+      source_note: Official Ardiente Dance page lists DMV teaching area, Rockville classes, and David Cuevas.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhood: display
+        dance_styles: display
+        public_contact_url: source_link_only
+        public_phone: hide
+        address_line1: source_link_only
+      fields_hidden_from_public_display:
+        - public_phone
+        - direct_email
+
+    - id: studio-ferocity-dance-company
+      slug: ferocity-dance-company
+      name: Ferocity Dance Company
+      summary: Bachata-focused dance company offering group classes, training teams, and studio instruction.
+      city: Washington DC Metropolitan Area
+      state: DMV
+      neighborhood: Washington DC Metropolitan Area
+      dance_styles:
+        - bachata
+        - salsa_on2
+      class_slugs:
+        - ferocity-bachata-training-team-level-2
+      instructor_slugs:
+        - kat-arias
+      external_source_url: https://www.ferocitydance.com/group-classes.html
+      source_note: Official Ferocity group classes page lists current in-person class schedule, studio directions, and training team classes.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: source_link_only
+        state: source_link_only
+        neighborhood: source_link_only
+        dance_styles: display
+        public_contact_url: source_link_only
+        public_phone: hide
+        address_line1: hide
+      fields_hidden_from_public_display:
+        - public_phone
+        - direct_email
+        - address_line1
+
+  instructors:
+    - id: instructor-baila-dc-luz
+      slug: baila-dc-luz
+      name: Luz
+      summary: Baila DC instructor listed on the official Baila DC about page.
+      city: Washington
+      state: DC
+      neighborhoods:
+        - Union Market
+      dance_styles:
+        - salsa_on2
+      class_slugs:
+        - baila-dc-salsa-level-1a-june-july-2026
+      studio_slugs:
+        - baila-dc
+      external_source_url: https://bailadc.com/about-us
+      source_note: Official Baila DC about page lists Luz under instructors. No surname or class-specific assignment is confirmed on the source page.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhoods: display
+        dance_styles: display
+        public_contact_url: hide
+        direct_contact_fields: hide
+      fields_hidden_from_public_display:
+        - public_contact_url
+        - direct_contact_fields
+
+    - id: instructor-silvia-alexiev
+      slug: silvia-alexiev
+      name: Silvia Alexiev
+      summary: Owner of Salsa With Silvia with an official studio profile.
+      city: Washington
+      state: DC
+      neighborhoods:
+        - Georgia Ave NW
+        - Bethesda
+      dance_styles:
+        - salsa
+        - ballroom
+      class_slugs:
+        - salsa-with-silvia-tier-zero-dc-bethesda
+      studio_slugs:
+        - salsa-with-silvia-dc
+      external_source_url: https://salsawithsilvia.com/about/instructor/silvia-alexiev/
+      source_note: Official Salsa With Silvia profile identifies Silvia Alexiev and describes her dance background.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhoods: display
+        dance_styles: display
+        public_contact_url: source_link_only
+        direct_contact_fields: hide
+      fields_hidden_from_public_display:
+        - direct_contact_fields
+
+    - id: instructor-david-cuevas
+      slug: david-cuevas
+      name: David Cuevas
+      summary: Ardiente Dance leader and instructor for On2 Mambo/Salsa classes in the DMV area.
+      city: Rockville
+      state: MD
+      neighborhoods:
+        - Rockville
+      dance_styles:
+        - salsa_on2
+        - mambo
+      class_slugs:
+        - ardiente-salsa-social-dance-techniques-tuesday
+      studio_slugs:
+        - ardiente-dance
+      external_source_url: https://ardientedance.com/
+      source_note: Official Ardiente Dance page identifies David Cuevas and lists him on Rockville salsa class copy.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: display
+        state: display
+        neighborhoods: display
+        dance_styles: display
+        public_contact_url: source_link_only
+        direct_contact_fields: hide
+      fields_hidden_from_public_display:
+        - direct_contact_fields
+
+    - id: instructor-kat-arias
+      slug: kat-arias
+      name: Kat Arias
+      summary: Ferocity Dance Company owner, managing director, Bachata choreographer, dancer, and instructor.
+      city: Washington DC Metropolitan Area
+      state: DMV
+      neighborhoods:
+        - Washington DC Metropolitan Area
+      dance_styles:
+        - bachata
+      class_slugs:
+        - ferocity-bachata-training-team-level-2
+      studio_slugs:
+        - ferocity-dance-company
+      external_source_url: https://www.ferocitydance.com/katarias.html
+      source_note: Official Ferocity profile identifies Kat Arias and her role with Ferocity Dance Company.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        name: display
+        summary: display
+        city: source_link_only
+        state: source_link_only
+        neighborhoods: source_link_only
+        dance_styles: display
+        public_contact_url: source_link_only
+        direct_contact_fields: hide
+      fields_hidden_from_public_display:
+        - direct_contact_fields
+
+  classes:
+    - id: class-baila-dc-salsa-level-1a-june-july-2026
+      slug: baila-dc-salsa-level-1a-june-july-2026
+      title: Baila DC Salsa Level 1A - June/July 2026
+      dance_styles:
+        - salsa_on2
+      class_type: progressive_series
+      level: absolute_beginner
+      schedule_summary: Mondays 7:00-8:00 PM, 06/01 to 07/06, June/July 2026 6-week cycle.
+      studio_slug: baila-dc
+      instructor_slugs:
+        - baila-dc-luz
+      city: Washington
+      state: DC
+      neighborhood: Union Market
+      external_source_url: https://bailadc.com/classes
+      source_note: Official Baila DC class page lists Level 1A, Mondays 7:00-8:00 PM, 06/01 to 07/06, and 1280 4th St NE.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        title: display
+        dance_styles: display
+        class_type: display
+        level: display
+        schedule_summary: display
+        city: display
+        state: display
+        neighborhood: display
+        registration_url: source_link_only
+        price_summary: hide
+        exact_schedule_claims: display
+      fields_hidden_from_public_display:
+        - price_summary
+
+    - id: class-salsa-with-silvia-tier-zero-dc-bethesda
+      slug: salsa-with-silvia-tier-zero-dc-bethesda
+      title: Salsa With Silvia Tier 0 Group Classes
+      dance_styles:
+        - salsa
+        - bachata
+      class_type: group_class
+      level: beginner
+      schedule_summary: Tier 0 group classes are available through the DC and Bethesda class schedules; users must verify and book through the official schedule.
+      studio_slug: salsa-with-silvia-dc
+      instructor_slugs:
+        - silvia-alexiev
+      city: Washington
+      state: DC
+      neighborhood: Georgia Ave NW
+      external_source_url: https://salsawithsilvia.com/group/
+      source_note: Official group class page describes DC/Bethesda group classes and says no experience, consultation, or partner are required for Tier 0.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        title: display
+        dance_styles: display
+        class_type: display
+        level: display
+        schedule_summary: source_link_only
+        city: display
+        state: display
+        neighborhood: display
+        registration_url: source_link_only
+        price_summary: hide
+        exact_schedule_claims: hide
+      fields_hidden_from_public_display:
+        - price_summary
+        - exact_schedule_claims
+
+    - id: class-ardiente-salsa-social-dance-techniques-tuesday
+      slug: ardiente-salsa-social-dance-techniques-tuesday
+      title: Ardiente Salsa Social Dance Techniques
+      dance_styles:
+        - salsa_on2
+        - mambo
+      class_type: progressive_series
+      level: levels_2_and_3
+      schedule_summary: Tuesdays 8:30-9:30 PM, 5-week cycle at Z-sweat Dance in Rockville.
+      studio_slug: ardiente-dance
+      instructor_slugs:
+        - david-cuevas
+      city: Rockville
+      state: MD
+      neighborhood: Rockville
+      external_source_url: https://ardientedance.com/
+      source_note: Official Ardiente Dance page lists Tuesday Salsa Social Dance Techniques, Levels 2 and 3, 5-week cycle, Rockville, and instructor copy.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        title: display
+        dance_styles: display
+        class_type: display
+        level: display
+        schedule_summary: display
+        city: display
+        state: display
+        neighborhood: display
+        registration_url: source_link_only
+        price_summary: source_link_only
+        exact_schedule_claims: display
+      fields_hidden_from_public_display: []
+
+    - id: class-ferocity-bachata-training-team-level-2
+      slug: ferocity-bachata-training-team-level-2
+      title: Ferocity Bachata Training Team Level 2
+      dance_styles:
+        - bachata
+      class_type: training_team
+      level: intermediate_and_up
+      schedule_summary: Wednesdays 8:00-10:00 PM; next session begins in July with registration opening June 1.
+      studio_slug: ferocity-dance-company
+      instructor_slugs:
+        - kat-arias
+      city: Washington DC Metropolitan Area
+      state: DMV
+      neighborhood: Washington DC Metropolitan Area
+      external_source_url: https://www.ferocitydance.com/group-classes.html
+      source_note: Official Ferocity group classes page lists Bachata Training Team Level 2, Wednesdays 8:00-10:00 PM, instructor Kat Arias, and intermediate-and-up level.
+      last_reviewed_at: "2026-05-13"
+      reviewer: codex
+      visibility: public_reviewed
+      public_display_decisions:
+        title: display
+        dance_styles: display
+        class_type: display
+        level: display
+        schedule_summary: display
+        city: source_link_only
+        state: source_link_only
+        neighborhood: source_link_only
+        registration_url: source_link_only
+        price_summary: hide
+        exact_schedule_claims: display
+      fields_hidden_from_public_display:
+        - price_summary
+
+  taxonomy_overrides:
+    - group: dance_styles
+      value: salsa_on2
+      label: Salsa On2
+      source_note: Used by Baila DC and Ardiente official source copy.
+    - group: class_types
+      value: training_team
+      label: Training Team
+      source_note: Used by Ferocity official class copy.

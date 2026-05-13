@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Gente Directory Static Site MVP Preview</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="top-nav" aria-label="Directory preview navigation">
+        <a class="brand" href="#top" aria-label="Mi Gente Directory preview home">
+          <span class="brand-mark" aria-hidden="true">MG</span>
+          <span>
+            <strong>Mi Gente DMV</strong>
+            <small>Directory preview</small>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#classes">Classes</a>
+          <a href="#studios">Studios</a>
+          <a href="#instructors">Instructors</a>
+          <a href="#review">Review</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="overview-band" aria-label="Directory overview">
+        <div class="overview-copy">
+          <span class="status-pill">Static Site MVP preview</span>
+          <h1>Latin dance classes, studios, and instructors in the DMV</h1>
+          <p>
+            This preview uses reviewed records from the Mi Gente tenant data package. It links to official sources for
+            current schedules, registration, prices, and venue details.
+          </p>
+        </div>
+        <aside class="review-summary" aria-label="Launch review status">
+          <div>
+            <strong>4</strong>
+            <span>classes</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>studios</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>instructors</span>
+          </div>
+          <div>
+            <strong>0</strong>
+            <span>direct contacts shown</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="notice-band" aria-label="Source and display notice">
+        <p>
+          Records are reviewed for launch preview only. Before attending, confirm details with the official source.
+          Direct phone and email fields are hidden unless separately approved by policy.
+        </p>
+        <div>
+          <a href="./source/reviewed-records.yaml">Reviewed records</a>
+          <a href="./source/source-and-display-policy.md">Display policy</a>
+          <a href="./source/release-evidence.md">Launch evidence</a>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Directory filters">
+        <div>
+          <label for="search">Search directory</label>
+          <input id="search" type="search" placeholder="Search class, studio, instructor, city" autocomplete="off" />
+        </div>
+        <div>
+          <span>Style</span>
+          <div class="button-row" role="group" aria-label="Filter by dance style">
+            <button class="filter-button active" type="button" data-filter-group="style" data-filter-value="all">All</button>
+            <button class="filter-button" type="button" data-filter-group="style" data-filter-value="salsa">Salsa</button>
+            <button class="filter-button" type="button" data-filter-group="style" data-filter-value="bachata">Bachata</button>
+            <button class="filter-button" type="button" data-filter-group="style" data-filter-value="mambo">Mambo</button>
+          </div>
+        </div>
+        <div>
+          <span>Area</span>
+          <div class="button-row" role="group" aria-label="Filter by area">
+            <button class="filter-button active" type="button" data-filter-group="area" data-filter-value="all">All</button>
+            <button class="filter-button" type="button" data-filter-group="area" data-filter-value="dc">DC</button>
+            <button class="filter-button" type="button" data-filter-group="area" data-filter-value="md">MD</button>
+            <button class="filter-button" type="button" data-filter-group="area" data-filter-value="dmv">DMV</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="directory-section" id="classes" aria-labelledby="classes-title">
+        <div class="section-heading">
+          <span>Reviewed class records</span>
+          <h2 id="classes-title">Classes</h2>
+        </div>
+        <div class="record-grid" id="class-grid"></div>
+      </section>
+
+      <section class="directory-section" id="studios" aria-labelledby="studios-title">
+        <div class="section-heading">
+          <span>Reviewed studio records</span>
+          <h2 id="studios-title">Studios</h2>
+        </div>
+        <div class="record-grid" id="studio-grid"></div>
+      </section>
+
+      <section class="directory-section" id="instructors" aria-labelledby="instructors-title">
+        <div class="section-heading">
+          <span>Reviewed instructor records</span>
+          <h2 id="instructors-title">Instructors</h2>
+        </div>
+        <div class="record-grid" id="instructor-grid"></div>
+      </section>
+
+      <section class="review-band" id="review" aria-label="Launch review checklist">
+        <div>
+          <span>Launch review</span>
+          <h2>What this preview proves</h2>
+        </div>
+        <ul>
+          <li>Reviewed source links are visible for every record.</li>
+          <li>Prototype demo records are not present.</li>
+          <li>Direct contact fields are hidden from public display.</li>
+          <li>Schedule, price, and registration claims route users back to official sources.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./assets/directory.js"></script>
+  </body>
+</html>
