@@ -13,7 +13,7 @@ The preview publishes reviewed public-source sample records only. Direct phone, 
 
 ## Published URL
 
-After GitHub Pages is enabled, the preview should be available at:
+The verified GitHub Pages preview is available at:
 
 ```text
 https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/
@@ -27,6 +27,7 @@ https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/
 - [`source/reviewed-records.yaml`](source/reviewed-records.yaml): copied reviewed records package
 - [`source/source-and-display-policy.md`](source/source-and-display-policy.md): copied source/display policy
 - [`source/release-evidence.md`](source/release-evidence.md): copied launch evidence snapshot
+- [`source/walkthrough-evidence.md`](source/walkthrough-evidence.md): copied hosted walkthrough evidence snapshot
 
 ## Update Rule
 

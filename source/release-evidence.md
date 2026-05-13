@@ -2,7 +2,7 @@
 
 Launch project: [Tenant Launch: Mi Gente DMV - Directory Static Site MVP](https://github.com/users/vitalychernobyl/projects/9)
 
-Status: not ready
+Status: ready for external static preview; production custom domain not launched
 
 ## Evidence Summary
 
@@ -23,7 +23,9 @@ Status: not ready
 | Walkthrough evidence template | Passed | [`tenant/launch/migente-directory-static-site-mvp/walkthrough-evidence-template.md`](walkthrough-evidence-template.md) |
 | Static preview implementation | Passed | [`tenant/website/directory/preview/index.html`](../../website/directory/preview/index.html) |
 | Static preview walkthrough | Passed | [`walkthrough-evidence.md`](walkthrough-evidence.md) |
-| Production launch | Blocked | Production or externally hosted preview URL not selected |
+| External preview repository | Passed | [mobilis-tenant-migente-directory-preview](https://github.com/vitalychernobyl/mobilis-tenant-migente-directory-preview) |
+| External preview URL | Passed | [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/) |
+| Production custom domain | Deferred | Use the external preview URL until a production/custom domain is selected |
 
 ## Launch Work Items
 
@@ -44,8 +46,11 @@ Status: not ready
 - Rollback plan is documented in [`rollback-plan.md`](rollback-plan.md).
 - Desktop/mobile walkthrough evidence template is documented in [`walkthrough-evidence-template.md`](walkthrough-evidence-template.md).
 - Static preview walkthrough evidence is documented in [`walkthrough-evidence.md`](walkthrough-evidence.md).
-- This launch pack is a draft and does not authorize production launch.
+- External preview URL verified: [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/).
+- External preview repository verified: [mobilis-tenant-migente-directory-preview](https://github.com/vitalychernobyl/mobilis-tenant-migente-directory-preview).
+- Hosted desktop and mobile screenshots are documented in [`walkthrough-evidence.md`](walkthrough-evidence.md).
+- This launch pack authorizes external static preview review only. Production/custom-domain launch remains a separate decision.
 
 ## Required Release Evidence Later
 
-- production URL
+- production/custom-domain URL, if this preview is promoted beyond the external static preview
