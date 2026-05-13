@@ -1,56 +1,38 @@
-# Mi Gente Directory Static Site MVP Release Evidence
-
-Launch project: [Tenant Launch: Mi Gente DMV - Directory Static Site MVP](https://github.com/users/vitalychernobyl/projects/9)
+# Mi Gente Directory Static Preview Release Evidence Snapshot
 
 Status: ready for external static preview; production custom domain not launched
 
-## Evidence Summary
+Hosted preview: [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/)
+
+Canonical tenant source:
+
+- Tenant repository: [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente)
+- Static preview source: [tenant/website/directory/preview](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/website/directory/preview)
+- Launch evidence folder: [tenant/launch/migente-directory-static-site-mvp](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/launch/migente-directory-static-site-mvp)
+- Launch issue: [Directory MVP: complete launch readiness evidence](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/14)
+
+## Evidence Included In This Preview Repo
 
 | Area | Status | Evidence |
 |---|---|---|
-| Prototype exists | Passed | [`prototypes/Static-studios-and-instructors`](../../../prototypes/Static-studios-and-instructors/) |
-| Promotion review exists | Passed | [`prototypes/Static-studios-and-instructors/notes/promotion-review.md`](../../../prototypes/Static-studios-and-instructors/notes/promotion-review.md) |
-| Canonical website draft exists | Passed | [`tenant/website/directory`](../../website/directory/) |
-| Canonical data model draft exists | Passed | [`tenant/data/directory`](../../data/directory/) |
-| Canonical docs draft exists | Passed | [`tenant/docs/directory`](../../docs/directory/) |
-| Canonical scenario draft exists | Passed | [`tenant/scenarios/directory`](../../scenarios/directory/) |
-| Real content source policy | Passed | [`tenant/docs/directory/source-and-display-policy.md`](../../docs/directory/source-and-display-policy.md) |
-| Public display rules | Passed | [`tenant/docs/directory/source-and-display-policy.md`](../../docs/directory/source-and-display-policy.md) |
-| Product/core ownership | Passed | [`tenant/architecture/directory-ownership-decision.md`](../../architecture/directory-ownership-decision.md) |
-| Real record import | Passed | Reviewed sample package: [`tenant/data/directory/reviewed-records.yaml`](../../data/directory/reviewed-records.yaml) |
-| Flow Studio implementation | Passed | [Mi Gente Directory Flow Studio](https://github.com/vitalychernobyl/mobilis-flow-studio/blob/main/src/pages/prototypes/migente-directory.jsx) and [Flow Studio PR #3](https://github.com/vitalychernobyl/mobilis-flow-studio/pull/3) |
-| Rollback plan | Passed | [`tenant/launch/migente-directory-static-site-mvp/rollback-plan.md`](rollback-plan.md) |
-| Walkthrough evidence template | Passed | [`tenant/launch/migente-directory-static-site-mvp/walkthrough-evidence-template.md`](walkthrough-evidence-template.md) |
-| Static preview implementation | Passed | [`tenant/website/directory/preview/index.html`](../../website/directory/preview/index.html) |
-| Static preview walkthrough | Passed | [`walkthrough-evidence.md`](walkthrough-evidence.md) |
-| External preview repository | Passed | [mobilis-tenant-migente-directory-preview](https://github.com/vitalychernobyl/mobilis-tenant-migente-directory-preview) |
 | External preview URL | Passed | [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/) |
-| Production custom domain | Deferred | Use the external preview URL until a production/custom domain is selected |
+| Reviewed records snapshot | Passed | [`reviewed-records.yaml`](reviewed-records.yaml) |
+| Source/display policy snapshot | Passed | [`source-and-display-policy.md`](source-and-display-policy.md) |
+| Hosted walkthrough snapshot | Passed | [`walkthrough-evidence.md`](walkthrough-evidence.md) |
+| Hosted desktop screenshot | Passed | [`evidence/screenshots/directory-preview-hosted-desktop.png`](evidence/screenshots/directory-preview-hosted-desktop.png) |
+| Hosted mobile screenshot | Passed | [`evidence/screenshots/directory-preview-hosted-mobile.png`](evidence/screenshots/directory-preview-hosted-mobile.png) |
 
-## Launch Work Items
+## Validation Snapshot
 
-- [Directory MVP: approve source policy and public display rules](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/10)
-- [Directory MVP: prepare reviewed real record import](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/11)
-- [Directory MVP: implement Flow Studio directory scenarios](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/12)
-- [Directory MVP: decide marketplace and core ownership](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/13)
-- [Directory MVP: complete launch readiness evidence](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/14)
+- Pages build completed.
+- Hosted preview returned HTTP 200.
+- Hosted JavaScript asset returned HTTP 200.
+- Hosted reviewed records and policy snapshots returned HTTP 200.
+- Headless browser DOM check found reviewed records and official source links.
+- Desktop screenshot captured at 1440 by 5000.
+- Mobile screenshot captured at 500 by 8000.
+- Prototype demo-name scan found no old prototype records in the public preview files.
 
-## Validation Recorded So Far
+## Launch Boundary
 
-- Prototype static site was smoke-tested locally during prototype creation.
-- Tenant content validation passed during prototype PRs.
-- Source and display policy is documented for MVP planning.
-- Marketplace/core ownership decision is documented for MVP planning.
-- Flow Studio directory scenario validation passed in [mobilis-flow-studio PR #3](https://github.com/vitalychernobyl/mobilis-flow-studio/pull/3): `npm test`, `npm run test:flow-studio`, `npm run test:tenant-emulators`, `git diff --check`, and markdown relative-link sweep.
-- Reviewed real records sample import is documented in [`tenant/data/directory/reviewed-records.yaml`](../../data/directory/reviewed-records.yaml).
-- Rollback plan is documented in [`rollback-plan.md`](rollback-plan.md).
-- Desktop/mobile walkthrough evidence template is documented in [`walkthrough-evidence-template.md`](walkthrough-evidence-template.md).
-- Static preview walkthrough evidence is documented in [`walkthrough-evidence.md`](walkthrough-evidence.md).
-- External preview URL verified: [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/).
-- External preview repository verified: [mobilis-tenant-migente-directory-preview](https://github.com/vitalychernobyl/mobilis-tenant-migente-directory-preview).
-- Hosted desktop and mobile screenshots are documented in [`walkthrough-evidence.md`](walkthrough-evidence.md).
-- This launch pack authorizes external static preview review only. Production/custom-domain launch remains a separate decision.
-
-## Required Release Evidence Later
-
-- production/custom-domain URL, if this preview is promoted beyond the external static preview
+This public repo is an external static preview for review. Canonical source changes must happen in [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente), then be copied here when the preview needs a refreshed public URL.
