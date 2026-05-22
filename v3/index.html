@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Gente DMV — Classes Directory v3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-brand: #E8472A;
+      --color-brand-soft: #FDF0EE;
+      --color-accent: #F5A623;
+      --color-surface: #FFFFFF;
+      --color-surface-raised: #F8F7F5;
+      --color-border: #E8E5E0;
+      --color-text-primary: #1A1714;
+      --color-text-secondary: #5A534C;
+      --color-text-muted: #9A8F85;
+      --color-verified: #16A34A;
+      --color-needs-review: #D97706;
+      --color-demo: #9CA3AF;
+      --font-base: 'Inter', system-ui, sans-serif;
+      --radius-card: 12px;
+      --radius-pill: 999px;
+      --shadow-card: 0 2px 8px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+      --shadow-dock: 0 -1px 0 rgba(0,0,0,0.08), 0 -8px 24px rgba(0,0,0,0.06);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--color-surface-raised);
+      color: var(--color-text-primary);
+      font-family: var(--font-base);
+      font-size: 15px;
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 60px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--color-brand);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 11px;
+      color: var(--color-text-muted);
+      line-height: 1.2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--color-brand); }
+
+    /* ---- HERO ---- */
+    .hero-band {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 28px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      height: 24px;
+      padding: 0 10px;
+      border-radius: var(--radius-pill);
+      background: var(--color-brand-soft);
+      color: var(--color-brand);
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title {
+      margin: 0 0 8px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-text-primary);
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      max-width: 540px;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat strong {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1;
+    }
+
+    .stat span {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    /* ---- NOTICE BAND ---- */
+    .notice-band {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto 14px;
+      padding: 11px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .notice-band p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+    }
+
+    .notice-links {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .notice-links a {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-brand);
+      text-decoration: none;
+    }
+
+    .notice-links a:hover { text-decoration: underline; }
+
+    /* ---- FINDER BAR ---- */
+    .finder-bar {
+      position: sticky;
+      top: 60px;
+      z-index: 40;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 10px 0;
+    }
+
+    .finder-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .finder-top {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-wrap {
+      flex: 1;
+      min-width: 0;
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-muted);
+      pointer-events: none;
+      display: flex;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 40px;
+      padding: 0 16px 0 38px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      background: var(--color-surface);
+      color: var(--color-text-primary);
+      font-family: var(--font-base);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--color-brand);
+      box-shadow: 0 0 0 3px rgba(232,71,42,0.10);
+    }
+
+    .search-input::placeholder { color: var(--color-text-muted); }
+
+    /* Segmented mode switch */
+    .mode-switch {
+      display: flex;
+      padding: 3px;
+      border-radius: var(--radius-pill);
+      background: var(--color-surface-raised);
+      border: 1px solid var(--color-border);
+      flex-shrink: 0;
+    }
+
+    .mode-btn {
+      height: 34px;
+      padding: 0 14px;
+      border: none;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-family: var(--font-base);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .mode-btn.active {
+      background: var(--color-brand);
+      color: white;
+    }
+
+    /* Filter chip rows */
+    .filter-row {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      align-items: center;
+    }
+
+    .filter-row::-webkit-scrollbar { display: none; }
+
+    .filter-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+      padding-right: 4px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      height: 32px;
+      padding: 0 12px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      background: var(--color-surface);
+      color: var(--color-text-secondary);
+      font-family: var(--font-base);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+
+    .chip:hover {
+      border-color: var(--color-brand);
+      color: var(--color-brand);
+    }
+
+    .chip.active {
+      background: var(--color-brand);
+      color: white;
+      border-color: var(--color-brand);
+    }
+
+    /* ---- MAIN CONTENT ---- */
+    .main-content {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding-top: 28px;
+    }
+
+    /* ---- SECTION HEADER ---- */
+    .section-header {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      padding-left: 10px;
+      border-left: 3px solid var(--color-brand);
+      margin-bottom: 16px;
+    }
+
+    .directory-section { margin-bottom: 44px; }
+
+    /* ---- CARD GRID ---- */
+    .record-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    /* ---- RECORD CARD ---- */
+    .record-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-card);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.12s, box-shadow 0.12s;
+    }
+
+    .record-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    .record-card.hidden { display: none; }
+
+    /* 1. Tag row */
+    .card-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: var(--radius-pill);
+      background: var(--color-brand-soft);
+      color: var(--color-brand);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    /* 2. Title + avatar */
+    .card-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      line-height: 1.3;
+    }
+
+    .card-avatar {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-brand);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    /* 3. Meta row */
+    .card-meta {
+      margin: 0;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    /* 4. Source state badge */
+    .card-source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .source-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .source-verified .source-dot { background: var(--color-verified); }
+    .source-verified { color: var(--color-verified); }
+
+    .source-needs-review .source-dot { background: var(--color-needs-review); }
+    .source-needs-review { color: var(--color-needs-review); }
+
+    .source-demo .source-dot { background: var(--color-demo); }
+    .source-demo { color: var(--color-demo); }
+
+    /* 5. Map + video row */
+    .card-tools {
+      display: flex;
+      gap: 6px;
+    }
+
+    .ghost-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      padding: 0 10px;
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-family: var(--font-base);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.1s, color 0.1s;
+    }
+
+    .ghost-btn:hover {
+      border-color: var(--color-brand);
+      color: var(--color-brand);
+    }
+
+    /* 6. Action row */
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: var(--color-brand);
+      color: white;
+      font-family: var(--font-base);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      flex: 1;
+      transition: background 0.12s;
+    }
+
+    .btn-primary:hover { background: #d13a1f; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--color-brand);
+      border: 1px solid var(--color-brand);
+      font-family: var(--font-base);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      flex: 1;
+      transition: background 0.12s;
+    }
+
+    .btn-secondary:hover { background: var(--color-brand-soft); }
+
+    /* ---- EMPTY STATE ---- */
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 32px 24px;
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-card);
+      text-align: center;
+    }
+
+    .empty-state p {
+      margin: 0 0 12px;
+      color: var(--color-text-muted);
+      font-size: 14px;
+    }
+
+    .empty-state button {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 16px;
+      border-radius: var(--radius-pill);
+      background: var(--color-brand);
+      color: white;
+      font-family: var(--font-base);
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ---- MOBILE DOCK ---- */
+    .mobile-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px;
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-dock);
+      display: flex;
+      gap: 10px;
+      z-index: 100;
+    }
+
+    .mobile-dock .btn-primary { flex: 1; }
+    .mobile-dock .btn-secondary { flex: 1; }
+
+    /* ---- ASSISTANT BUTTON ---- */
+    .assistant-btn {
+      position: fixed;
+      bottom: 88px;
+      right: 16px;
+      z-index: 101;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-brand);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(232,71,42,0.35);
+      transition: background 0.12s, transform 0.12s;
+    }
+
+    .assistant-btn:hover {
+      background: #d13a1f;
+      transform: scale(1.06);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 640px) {
+      .hero-title { font-size: 20px; }
+      .nav-links { display: none; }
+
+      .finder-top { flex-direction: column; align-items: stretch; }
+      .mode-switch { width: 100%; }
+      .mode-btn { flex: 1; text-align: center; }
+
+      .notice-band {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .notice-links { flex-wrap: wrap; }
+    }
+
+    @media (max-width: 480px) {
+      .record-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 641px) {
+      .mobile-dock { display: none; }
+      .assistant-btn { bottom: 24px; }
+      body { padding-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Directory navigation">
+      <a class="brand" href="#top" aria-label="Mi Gente Directory home">
+        <span class="brand-mark" aria-hidden="true">MG</span>
+        <span class="brand-text">
+          <strong>Mi Gente DMV</strong>
+          <small>Classes directory</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#classes">Classes</a>
+        <a href="#studios">Studios</a>
+        <a href="#instructors">Instructors</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div id="top">
+    <div class="hero-band">
+      <span class="hero-badge">Static preview &middot; reviewed records only</span>
+      <h1 class="hero-title">Latin dance classes, studios &amp; instructors in the DMV</h1>
+      <p class="hero-sub">Reviewed listings with links to official sources for current schedules, registration, and prices.</p>
+      <div class="stats-row">
+        <div class="stat"><strong>4</strong><span>classes</span></div>
+        <div class="stat"><strong>4</strong><span>studios</span></div>
+        <div class="stat"><strong>4</strong><span>instructors</span></div>
+        <div class="stat"><strong>0</strong><span>direct contacts</span></div>
+      </div>
+    </div>
+
+    <!-- NOTICE -->
+    <div class="notice-band" role="note">
+      <p>Records are reviewed for launch preview only. Confirm details with the official source before attending. Phone and email fields are hidden.</p>
+      <div class="notice-links">
+        <a href="../source/reviewed-records.yaml">Reviewed records</a>
+        <a href="../source/source-and-display-policy.md">Display policy</a>
+        <a href="../source/release-evidence.md">Launch evidence</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINDER BAR -->
+  <div class="finder-bar" role="search" aria-label="Directory search and filters">
+    <div class="finder-inner">
+      <div class="finder-top">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </span>
+          <input
+            id="search"
+            class="search-input"
+            type="search"
+            placeholder="Search class, studio, instructor, city"
+            autocomplete="off"
+            aria-label="Search directory"
+          />
+        </div>
+        <div class="mode-switch" role="group" aria-label="Browse mode">
+          <button class="mode-btn active" type="button" data-mode="now">Need a class now</button>
+          <button class="mode-btn" type="button" data-mode="browse">Browse + compare</button>
+        </div>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter by style">
+        <span class="filter-label">Style</span>
+        <button class="chip active" type="button" data-filter-group="style" data-filter-value="all">All</button>
+        <button class="chip" type="button" data-filter-group="style" data-filter-value="salsa">Salsa</button>
+        <button class="chip" type="button" data-filter-group="style" data-filter-value="bachata">Bachata</button>
+        <button class="chip" type="button" data-filter-group="style" data-filter-value="mambo">Mambo</button>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter by area">
+        <span class="filter-label">Area</span>
+        <button class="chip active" type="button" data-filter-group="area" data-filter-value="all">All</button>
+        <button class="chip" type="button" data-filter-group="area" data-filter-value="dc">DC</button>
+        <button class="chip" type="button" data-filter-group="area" data-filter-value="md">MD</button>
+        <button class="chip" type="button" data-filter-group="area" data-filter-value="dmv">DMV</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <section class="directory-section" id="classes" aria-labelledby="classes-heading">
+      <span class="section-header" id="classes-heading">Reviewed class records</span>
+      <div class="record-grid" id="class-grid"></div>
+    </section>
+
+    <section class="directory-section" id="studios" aria-labelledby="studios-heading">
+      <span class="section-header" id="studios-heading">Reviewed studio records</span>
+      <div class="record-grid" id="studio-grid"></div>
+    </section>
+
+    <section class="directory-section" id="instructors" aria-labelledby="instructors-heading">
+      <span class="section-header" id="instructors-heading">Reviewed instructor records</span>
+      <div class="record-grid" id="instructor-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- MOBILE DOCK -->
+  <div class="mobile-dock" aria-label="Quick actions">
+    <a class="btn-primary" href="#classes">Find classes</a>
+    <a class="btn-secondary" href="#studios">Compare studios</a>
+  </div>
+
+  <!-- ASSISTANT BUTTON -->
+  <button class="assistant-btn" type="button" aria-label="Ask for help finding a class">
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <script>
+    const records = {
+      classes: [
+        {
+          title: 'Baila DC Salsa Level 1A — June/July 2026',
+          summary: 'Absolute beginner Salsa On2 progressive series reviewed from the official Baila DC class page.',
+          style: ['salsa'],
+          area: 'dc',
+          location: 'Union Market, Washington, DC',
+          schedule: 'Mondays 7:00–8:00 PM, 06/01 to 07/06',
+          level: 'Absolute beginner',
+          source: 'https://bailadc.com/classes',
+          sourceState: 'verified',
+          policy: ['Registration source link only', 'Price hidden', 'Direct contacts hidden']
+        },
+        {
+          title: 'Salsa With Silvia Tier 0 Group Classes',
+          summary: 'Beginner group class entry path for DC and Bethesda schedules, reviewed from official studio pages.',
+          style: ['salsa', 'bachata'],
+          area: 'dc',
+          location: 'Washington, DC',
+          schedule: 'See official schedule before attending',
+          level: 'Beginner',
+          source: 'https://salsawithsilvia.com/group/',
+          sourceState: 'verified',
+          policy: ['Schedule source link only', 'Price hidden', 'Direct contacts hidden']
+        },
+        {
+          title: 'Ardiente Salsa Social Dance Techniques',
+          summary: 'On2 Mambo/Salsa class for Levels 2 and 3, reviewed from the official Ardiente Dance page.',
+          style: ['salsa', 'mambo'],
+          area: 'md',
+          location: 'Rockville, MD',
+          schedule: 'Tuesdays 8:30–9:30 PM, 5-week cycle',
+          level: 'Levels 2 and 3',
+          source: 'https://ardientedance.com/',
+          sourceState: 'verified',
+          policy: ['Price source link only', 'Registration source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'Ferocity Bachata Training Team Level 2',
+          summary: 'Intermediate-and-up Bachata training team reviewed from the official Ferocity group classes page.',
+          style: ['bachata'],
+          area: 'dmv',
+          location: 'See official source for exact location',
+          schedule: 'Wednesdays 8:00–10:00 PM',
+          level: 'Intermediate and up',
+          source: 'https://www.ferocitydance.com/group-classes.html',
+          sourceState: 'verified',
+          policy: ['Location source link only', 'Price hidden', 'Direct contacts hidden']
+        }
+      ],
+      studios: [
+        {
+          title: 'Baila DC',
+          summary: 'Salsa organization in the DC metro area offering On2 salsa classes and Baila Thursdays socials.',
+          style: ['salsa'],
+          area: 'dc',
+          location: 'Union Market, Washington, DC',
+          source: 'https://bailadc.com/about-us',
+          sourceState: 'verified',
+          policy: ['Address source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'Salsa With Silvia — DC',
+          summary: 'Washington DC studio location offering group and private dance classes.',
+          style: ['salsa', 'bachata'],
+          area: 'dc',
+          location: 'Georgia Ave NW, Washington, DC',
+          source: 'https://salsawithsilvia.com/about/contact/',
+          sourceState: 'verified',
+          policy: ['Address source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'Ardiente Dance',
+          summary: 'Dance company performing and teaching On2 Mambo/Salsa in DC, Maryland, and Virginia.',
+          style: ['salsa', 'mambo'],
+          area: 'md',
+          location: 'Rockville, MD',
+          source: 'https://ardientedance.com/',
+          sourceState: 'verified',
+          policy: ['Address source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'Ferocity Dance Company',
+          summary: 'Bachata-focused dance company offering group classes, training teams, and studio instruction.',
+          style: ['bachata', 'salsa'],
+          area: 'dmv',
+          location: 'See official source for exact location',
+          source: 'https://www.ferocitydance.com/group-classes.html',
+          sourceState: 'verified',
+          policy: ['Location source link only', 'Direct contacts hidden']
+        }
+      ],
+      instructors: [
+        {
+          title: 'Luz',
+          summary: 'Baila DC instructor listed on the official Baila DC about page.',
+          style: ['salsa'],
+          area: 'dc',
+          location: 'Washington, DC',
+          source: 'https://bailadc.com/about-us',
+          sourceState: 'verified',
+          policy: ['No direct contact displayed', 'Source confirms instructor listing']
+        },
+        {
+          title: 'Silvia Alexiev',
+          summary: 'Owner of Salsa With Silvia with an official studio profile.',
+          style: ['salsa'],
+          area: 'dc',
+          location: 'Washington, DC and Bethesda',
+          source: 'https://salsawithsilvia.com/about/instructor/silvia-alexiev/',
+          sourceState: 'verified',
+          policy: ['Profile source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'David Cuevas',
+          summary: 'Ardiente Dance leader and instructor for On2 Mambo/Salsa classes in the DMV area.',
+          style: ['salsa', 'mambo'],
+          area: 'md',
+          location: 'Rockville, MD',
+          source: 'https://ardientedance.com/',
+          sourceState: 'verified',
+          policy: ['Profile source link only', 'Direct contacts hidden']
+        },
+        {
+          title: 'Kat Arias',
+          summary: 'Ferocity Dance Company owner, managing director, Bachata choreographer, dancer, and instructor.',
+          style: ['bachata'],
+          area: 'dmv',
+          location: 'See official source for service area',
+          source: 'https://www.ferocitydance.com/katarias.html',
+          sourceState: 'verified',
+          policy: ['Profile source link only', 'Direct contacts hidden']
+        }
+      ]
+    };
+
+    const filters = {
+      style: 'all',
+      area: 'all',
+      search: '',
+      mode: 'now'
+    };
+
+    function normalize(value) {
+      return String(value != null ? value : '').toLowerCase();
+    }
+
+    function recordMatches(record) {
+      var query = filters.search;
+      var text = normalize([record.title, record.summary, record.location, record.level, record.schedule].join(' '));
+      var styleMatches = filters.style === 'all' || record.style.indexOf(filters.style) !== -1;
+      var areaMatches = filters.area === 'all' || record.area === filters.area;
+      var searchMatches = query === '' || text.indexOf(query) !== -1;
+      return styleMatches && areaMatches && searchMatches;
+    }
+
+    function initials(title) {
+      return title.split(/\s+/).slice(0, 2).map(function(w) { return w[0] || ''; }).join('').toUpperCase();
+    }
+
+    function sourceStateBadge(state) {
+      var map = {
+        'verified': { cls: 'source-verified', label: 'Verified' },
+        'needs-review': { cls: 'source-needs-review', label: 'Needs review' },
+        'demo': { cls: 'source-demo', label: 'Demo data' }
+      };
+      var s = map[state] || map['verified'];
+      return '<div class="card-source-badge ' + s.cls + '" aria-label="Source status: ' + s.label + '"><span class="source-dot" aria-hidden="true"></span>' + s.label + '</div>';
+    }
+
+    function primaryCTA(type) {
+      if (type === 'class') return filters.mode === 'now' ? 'Book or ask' : 'Class path';
+      if (type === 'studio') return 'Find classes';
+      if (type === 'instructor') return 'Check fit';
+      return 'Check fit';
+    }
+
+    function secondaryCTA() {
+      return filters.mode === 'browse' ? 'Compare options' : 'Official source';
+    }
+
+    function renderCard(record, type) {
+      var metaParts = [];
+      if (record.level) metaParts.push(record.level);
+      metaParts.push(record.style.map(function(s) { return s.charAt(0).toUpperCase() + s.slice(1); }).join('/'));
+      metaParts.push(record.area.toUpperCase());
+      var meta = metaParts.join(' · ');
+
+      var mapUrl = 'https://maps.google.com/?q=' + encodeURIComponent(record.location);
+      var pri = primaryCTA(type);
+      var sec = secondaryCTA();
+      var tags = record.style.map(function(s) { return '<span class="tag">' + s + '</span>'; }).join('');
+
+      return '<article class="record-card" data-record-type="' + type + '">' +
+        '<div class="card-tag-row">' + tags + '</div>' +
+        '<div class="card-title-row">' +
+          '<h3 class="card-title">' + record.title + '</h3>' +
+          '<div class="card-avatar" aria-hidden="true">' + initials(record.title) + '</div>' +
+        '</div>' +
+        '<p class="card-meta">' + meta + '</p>' +
+        sourceStateBadge(record.sourceState) +
+        '<div class="card-tools">' +
+          '<a class="ghost-btn" href="' + mapUrl + '" target="_blank" rel="noreferrer" aria-label="Map for ' + record.area.toUpperCase() + '">&#128205; Map</a>' +
+          '<button class="ghost-btn" type="button" aria-label="Preview not available">&#127916; Preview</button>' +
+        '</div>' +
+        '<div class="card-actions">' +
+          '<a class="btn-primary" href="' + record.source + '" target="_blank" rel="noreferrer">' + pri + '</a>' +
+          '<a class="btn-secondary" href="' + record.source + '" target="_blank" rel="noreferrer">' + sec + '</a>' +
+        '</div>' +
+        '</article>';
+    }
+
+    function renderGroup(id, items, type) {
+      var container = document.getElementById(id);
+      var visible = items.filter(recordMatches);
+      container.innerHTML = visible.length
+        ? visible.map(function(r) { return renderCard(r, type); }).join('')
+        : '<div class="empty-state"><p>No classes match those filters.</p><button type="button" onclick="resetFilters()">Reset filters</button></div>';
+    }
+
+    function render() {
+      renderGroup('class-grid', records.classes, 'class');
+      renderGroup('studio-grid', records.studios, 'studio');
+      renderGroup('instructor-grid', records.instructors, 'instructor');
+    }
+
+    function resetFilters() {
+      filters.style = 'all';
+      filters.area = 'all';
+      filters.search = '';
+      document.getElementById('search').value = '';
+      document.querySelectorAll('[data-filter-group]').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.filterValue === 'all');
+      });
+      render();
+    }
+
+    document.querySelectorAll('[data-filter-group]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var group = btn.dataset.filterGroup;
+        filters[group] = btn.dataset.filterValue;
+        document.querySelectorAll('[data-filter-group="' + group + '"]').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        render();
+      });
+    });
+
+    document.getElementById('search').addEventListener('input', function(e) {
+      filters.search = normalize(e.target.value.trim());
+      render();
+    });
+
+    document.querySelectorAll('[data-mode]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filters.mode = btn.dataset.mode;
+        document.querySelectorAll('[data-mode]').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        btn.classList.add('active');
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
