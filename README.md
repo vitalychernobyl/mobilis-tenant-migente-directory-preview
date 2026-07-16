@@ -4,9 +4,9 @@ This repository hosts the public static preview for the Mi Gente DMV directory l
 
 Canonical tenant source:
 
-- Tenant repository: [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente)
-- Static preview source: [tenant/website/directory/preview](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/website/directory/preview)
-- Launch evidence: [tenant/launch/migente-directory-static-site-mvp](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/launch/migente-directory-static-site-mvp)
+- Tenant source: [Mobilis monorepo](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente)
+- Static preview source: [tenant/website/directory/preview](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente/tenant/website/directory/preview)
+- Launch evidence: [tenant/launch/migente-directory-static-site-mvp](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente/tenant/launch/migente-directory-static-site-mvp)
 - Launch issue: [Directory MVP: complete launch readiness evidence](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/14)
 
 The preview publishes reviewed public-source sample records only. Direct phone, email, and unapproved contact fields are not included in the public page.
@@ -16,7 +16,7 @@ The preview publishes reviewed public-source sample records only. Direct phone, 
 The verified GitHub Pages preview is available at:
 
 ```text
-https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/
+https://mobilis-mobile.github.io/mobilis-tenant-migente-directory-preview/
 ```
 
 ## Contents
@@ -31,4 +31,4 @@ https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/
 
 ## Update Rule
 
-Treat this repository as a generated external preview. Make canonical content changes in [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente), then copy the reviewed preview artifact here when the launch evidence needs a public URL.
+Treat this repository as a generated external preview. Make canonical content changes in the [Mobilis monorepo](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente), then copy the reviewed preview artifact here when the launch evidence needs a public URL.
