@@ -8,7 +8,7 @@ Related issue: [Directory MVP: approve source policy and public display rules](h
 
 ## Purpose
 
-This policy defines which sources Mi Gente can use for the first directory launch and which fields can be shown publicly. It applies to classes, studios, instructors, and directory taxonomy in [tenant/data/directory](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/data/directory).
+This policy defines which sources Mi Gente can use for the first directory launch and which fields can be shown publicly. It applies to classes, studios, instructors, and directory taxonomy in [tenant/data/directory](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente/tenant/data/directory).
 
 The policy approves a review standard. It does not approve any specific class, studio, instructor, contact field, price, schedule, or venue address for publication.
 
@@ -77,7 +77,7 @@ Public website and FAQ copy must:
 
 The Static Site MVP can treat source policy and public display rules as decided once this document is referenced by:
 
-- [tenant/capabilities/marketplace-app.yaml](https://github.com/vitalychernobyl/mobilis-tenant-migente/blob/main/tenant/capabilities/marketplace-app.yaml)
-- [tenant/data/directory/README.md](https://github.com/vitalychernobyl/mobilis-tenant-migente/blob/main/tenant/data/directory/README.md)
-- [tenant/docs/directory/README.md](https://github.com/vitalychernobyl/mobilis-tenant-migente/blob/main/tenant/docs/directory/README.md)
+- [tenant/capabilities/marketplace-app.yaml](https://github.com/Mobilis-Mobile/mobilis/blob/main/tenants/migente/tenant/capabilities/marketplace-app.yaml)
+- [tenant/data/directory/README.md](https://github.com/Mobilis-Mobile/mobilis/blob/main/tenants/migente/tenant/data/directory/README.md)
+- [tenant/docs/directory/README.md](https://github.com/Mobilis-Mobile/mobilis/blob/main/tenants/migente/tenant/docs/directory/README.md)
 - [`release-evidence.md`](release-evidence.md)

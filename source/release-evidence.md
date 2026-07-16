@@ -2,20 +2,20 @@
 
 Status: ready for external static preview; production custom domain not launched
 
-Hosted preview: [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/)
+Hosted preview: [Mi Gente directory static preview](https://mobilis-mobile.github.io/mobilis-tenant-migente-directory-preview/)
 
 Canonical tenant source:
 
-- Tenant repository: [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente)
-- Static preview source: [tenant/website/directory/preview](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/website/directory/preview)
-- Launch evidence folder: [tenant/launch/migente-directory-static-site-mvp](https://github.com/vitalychernobyl/mobilis-tenant-migente/tree/main/tenant/launch/migente-directory-static-site-mvp)
+- Tenant source: [Mobilis monorepo](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente)
+- Static preview source: [tenant/website/directory/preview](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente/tenant/website/directory/preview)
+- Launch evidence folder: [tenant/launch/migente-directory-static-site-mvp](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente/tenant/launch/migente-directory-static-site-mvp)
 - Launch issue: [Directory MVP: complete launch readiness evidence](https://github.com/vitalychernobyl/mobilis-tenant-migente/issues/14)
 
 ## Evidence Included In This Preview Repo
 
 | Area | Status | Evidence |
 |---|---|---|
-| External preview URL | Passed | [Mi Gente directory static preview](https://vitalychernobyl.github.io/mobilis-tenant-migente-directory-preview/) |
+| External preview URL | Passed | [Mi Gente directory static preview](https://mobilis-mobile.github.io/mobilis-tenant-migente-directory-preview/) |
 | Reviewed records snapshot | Passed | [`reviewed-records.yaml`](reviewed-records.yaml) |
 | Source/display policy snapshot | Passed | [`source-and-display-policy.md`](source-and-display-policy.md) |
 | Hosted walkthrough snapshot | Passed | [`walkthrough-evidence.md`](walkthrough-evidence.md) |
@@ -35,4 +35,4 @@ Canonical tenant source:
 
 ## Launch Boundary
 
-This public repo is an external static preview for review. Canonical source changes must happen in [mobilis-tenant-migente](https://github.com/vitalychernobyl/mobilis-tenant-migente), then be copied here when the preview needs a refreshed public URL.
+This public repo is an external static preview for review. Canonical source changes must happen in the [Mobilis monorepo](https://github.com/Mobilis-Mobile/mobilis/tree/main/tenants/migente), then be copied here when the preview needs a refreshed public URL.
